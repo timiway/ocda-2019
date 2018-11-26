@@ -1,0 +1,55 @@
+
+html, body { height: 100%; text-align: center; overflow: hidden;}
+#app-body { height: 100%; background: url("../img/009.jpg") no-repeat 50% 50%; background-size: 500px auto; overflow-y: auto;}
+#app-paper { min-height: 100%; margin: 0 auto; background: white; animation: key-pager 3s ease 1s both;}
+
+.m-btn { position: absolute; left: 50%; top: 10px; margin-left: 140px; width: 20px; height: 20px; border: 2px solid white; background: black; border-radius: 50%; opacity: 0.3;}
+.m-motion { animation: key-btn 600ms ease infinite;}
+
+.ele { margin: auto; opacity: 0;}
+.ele img { width: 100%;}
+
+.ele.a { width: 160px; padding-top: 150px; animation: key-a 12s ease-out 3s both;}
+.ele.b { width: 160px; animation: key-show 5s linear 5s both;}
+.ele.c { width: 90px; animation: key-show 2s linear 12s both;}
+.ele.d { width: 110px; animation: key-show 2s linear 13s both;}
+.ele.e { width: 160px; margin-top: -10px; animation: key-show 3s linear 14s both;}
+.ele.f { width: 175px; margin-top: -20px; animation: key-show 3s linear 15s both;}
+.ele.g { width: 160px; margin-top: -20px; animation: key-show 3s linear 16s both;}
+.ele.h { width: 160px; animation: key-show 1s linear 7s both;}
+.ele.line { border-top: 2px solid #f15a24; padding-bottom: 10px; margin: 10px auto 0; width: 220px;}
+.ele.l1 { animation: key-show-size 2s linear 8s both;}
+.ele.l2 { animation: key-show-size 1s linear 17s both;}
+
+.star { position: absolute; left: 0; top: 0; width: 60px; height: 60px; background: url("../img/010.png") no-repeat 50% 50%; background-size: 100% 100%;}
+.star { animation: key-star 1s linear infinite both;}
+
+@keyframes key-btn {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.1);}
+    100% { transform: scale(1);}
+}
+
+@keyframes key-pager {
+    from { width: 10px; opacity: 0;}
+    to { width: 260px; opacity: 1;}
+}
+@keyframes key-show {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+@keyframes key-show-size {
+    from { opacity: 0; width: 0;}
+    to { opacity: 1;}
+}
+@keyframes key-a {
+    0% { opacity: 0; padding-top: 150px;}
+    50% { opacity: 1; padding-top: 150px;}
+    70% { opacity: 1; padding-top: 150px;}
+    100% { opacity: 1; padding-top: 10px;}
+}
+@keyframes key-star {
+    0% { opacity: 0; transform: scale(1);}
+    50% { opacity: 1; transform: scale(1.2);}
+    100% { opacity: 0; transform: scale(1);}
+}

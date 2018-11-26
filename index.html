@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/app.css">
+        <script src="libs/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+    <div id="musicSwitch" class="m-btn m-motion"></div>
+
+    <div id="app-body">
+        <div id="app-paper">
+            <div class="ele a"><img src="img/001.png"></div>
+            <div class="ele b"><img src="img/002.png"></div>
+            <div class="ele line l1"></div>
+            <div class="ele h"><img src="img/008.png"></div>
+            <div class="ele c"><img src="img/003.png"></div>
+            <div class="ele d"><img src="img/004.png"></div>
+            <div class="ele e"><img src="img/005.png"></div>
+            <div class="ele f"><img src="img/006.png"></div>
+            <div class="ele g"><img src="img/007.png"></div>
+            <div class="ele line l2"></div>
+        </div>
+    </div>
+
+
+    <audio id="m" preload="metadata" autoplay="autoplay" loop="loop" src="bg.mp3"></audio>
+    </body>
+    <script src="libs/jquery-1.12.0.min.js"></script>
+    <script>
+        $(function () {
+            var star = $('<div class="star"></div>');
+            for (var i=0; i<120; i++) {
+                var _s = star.clone();
+                var _size = Math.round(Math.random()*30)+10;
+                _s.css({
+                    top: Math.round(Math.random()*($(window).height()-100))+50,
+                    left: Math.round(Math.random()*($(window).width()-60))+30,
+                    animationDelay: Math.round(Math.random()*2000)+"ms"
+                }).width(_size).height(_size);
+                $("body").append(_s);
+            }
+            //
+            var media = document.getElementById("m");
+            document.addEventListener('WeixinJSBridgeReady', function(){media.play()});
+            $("#musicSwitch").click(function () {
+                $(this).toggleClass("m-motion");
+                if (media.paused) media.play();
+                else media.pause();
+            });
+        });
+    </script>
+</html>
