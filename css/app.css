@@ -3,8 +3,9 @@ html, body { height: 100%; text-align: center; overflow: hidden;}
 #app-body { height: 100%; background: url("../img/009.jpg") no-repeat 50% 50%; background-size: 500px auto; overflow-y: auto;}
 #app-paper { min-height: 100%; margin: 0 auto; background: white; animation: key-pager 3s ease 1s both;}
 
-.m-btn { position: absolute; left: 50%; top: 10px; margin-left: 140px; width: 20px; height: 20px; border: 2px solid white; background: black; border-radius: 50%; opacity: 0.3;}
-.m-motion { animation: key-btn 600ms ease infinite;}
+.m-btn { position: absolute; left: 50%; top: 10px; margin-left: 140px; width: 20px; height: 20px; border: 2px solid white; border-radius: 50%; opacity: 0.2;}
+.m-btn { background: black url("../img/011.png") no-repeat 50% 50%; background-size: 100% 100%;}
+.m-motion { animation: key-btn 600ms ease infinite; opacity: 0.5;}
 
 .ele { margin: auto; opacity: 0;}
 .ele img { width: 100%;}
