@@ -1,7 +1,7 @@
 
 html, body { height: 100%; text-align: center; overflow: hidden;}
 #app-body { height: 100%; background: url("../img/009.jpg") no-repeat 50% 50%; background-size: 500px auto; overflow-y: auto;}
-#app-paper { min-height: 100%; margin: 0 auto; background: white; animation: key-pager 3s ease 1s both;}
+#app-paper { min-height: 100%; margin: 0 auto; background: lightyellow; animation: key-pager 3s ease 1s both;}
 
 .m-btn { position: absolute; left: 50%; top: 10px; margin-left: 140px; width: 20px; height: 20px; border: 2px solid white; border-radius: 50%; opacity: 0.2;}
 .m-btn { background: black url("../img/011.png") no-repeat 50% 50%; background-size: 100% 100%;}
@@ -10,7 +10,7 @@ html, body { height: 100%; text-align: center; overflow: hidden;}
 .ele { margin: auto; opacity: 0;}
 .ele img { width: 100%;}
 
-.ele.a { width: 160px; padding-top: 150px; animation: key-a 12s ease-out 3s both;}
+.ele.a { width: 160px; padding-top: 150px; animation: key-a 11s linear 3s both;}
 .ele.b { width: 160px; animation: key-show 5s linear 5s both;}
 .ele.c { width: 90px; animation: key-show 2s linear 12s both;}
 .ele.d { width: 110px; animation: key-show 2s linear 13s both;}
@@ -46,7 +46,7 @@ html, body { height: 100%; text-align: center; overflow: hidden;}
 @keyframes key-a {
     0% { opacity: 0; padding-top: 150px;}
     50% { opacity: 1; padding-top: 150px;}
-    70% { opacity: 1; padding-top: 150px;}
+    80% { opacity: 1; padding-top: 150px;}
     100% { opacity: 1; padding-top: 10px;}
 }
 @keyframes key-star {
