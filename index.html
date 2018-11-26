@@ -19,14 +19,14 @@
     <div id="app-body">
         <div id="app-paper">
             <div class="ele a"><img src="img/001.png"></div>
-            <div class="ele b"><img src="img/002.png"></div>
+            <div class="ele b"><img src="img/002.png"><span class="light"></span></div>
             <div class="ele line l1"></div>
-            <div class="ele h"><img src="img/008.png"></div>
+            <div class="ele h"><img src="img/008.png"><span class="light"></span></div>
             <div class="ele c"><img src="img/003.png"></div>
             <div class="ele d"><img src="img/004.png"></div>
-            <div class="ele e"><img src="img/005.png"></div>
-            <div class="ele f"><img src="img/006.png"></div>
-            <div class="ele g"><img src="img/007.png"></div>
+            <div class="ele e"><img src="img/005.png"><span class="light"></span></div>
+            <div class="ele f"><img src="img/006.png"><span class="light"></span></div>
+            <div class="ele g"><img src="img/007.png"><span class="light"></span></div>
             <div class="ele line l2"></div>
         </div>
     </div>
@@ -48,6 +48,12 @@
                 }).width(_size).height(_size);
                 $("body").append(_s);
             }
+            $(".light").each(function (i) {
+                var _this = this;
+                setTimeout(function () {
+                    $(_this).show().addClass("light-motion");
+                }, i*600+20000)
+            });
             //
             var media = document.getElementById("m");
             document.addEventListener('WeixinJSBridgeReady', function(){media.play()});

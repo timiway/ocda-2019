@@ -7,10 +7,10 @@ html, body { height: 100%; text-align: center; overflow: hidden;}
 .m-btn { background: black url("../img/011.png") no-repeat 50% 50%; background-size: 100% 100%;}
 .m-motion { animation: key-btn 600ms ease infinite; opacity: 0.5;}
 
-.ele { margin: auto; opacity: 0;}
+.ele { margin: auto; opacity: 0; position: relative;}
 .ele img { width: 100%;}
 
-.ele.a { width: 160px; padding-top: 150px; animation: key-a 11s linear 3s both;}
+.ele.a { width: 160px; padding-top: 150px; animation: key-a 11s ease 3s both;}
 .ele.b { width: 160px; animation: key-show 5s linear 5s both;}
 .ele.c { width: 90px; animation: key-show 2s linear 12s both;}
 .ele.d { width: 110px; animation: key-show 2s linear 13s both;}
@@ -19,11 +19,20 @@ html, body { height: 100%; text-align: center; overflow: hidden;}
 .ele.g { width: 160px; margin-top: -20px; animation: key-show 3s linear 16s both;}
 .ele.h { width: 160px; animation: key-show 1s linear 7s both;}
 .ele.line { border-top: 2px solid #f15a24; padding-bottom: 10px; margin: 10px auto 0; width: 220px;}
-.ele.l1 { animation: key-show-size 2s linear 8s both;}
-.ele.l2 { animation: key-show-size 1s linear 17s both;}
+.ele.l1 { animation: key-show-size 2s ease 8s both;}
+.ele.l2 { animation: key-show-size 1s ease 17s both;}
 
 .star { position: absolute; left: 0; top: 0; width: 60px; height: 60px; background: url("../img/010.png") no-repeat 50% 50%; background-size: 100% 100%;}
 .star { animation: key-star 1s linear infinite both;}
+
+.light { position: absolute; display: none; width: 30px; height: 100%; left: 0; top:10px; transform: skew(-20deg); background: lightyellow; opacity: 0.2; mix-blend-mode: hard-light;}
+.light-motion { animation: key-light 4s linear both infinite;}
+
+@keyframes key-light {
+    0% { left: 0;}
+    30% { left: 100%; }
+    100% { left: 100%; }
+}
 
 @keyframes key-btn {
     0% { transform: scale(1);}
