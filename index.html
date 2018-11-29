@@ -17,7 +17,7 @@
     <div id="musicSwitch" class="m-btn m-motion"></div>
 
     <div id="app-body">
-        <div id="app-paper">
+        <div id="app-paper" class="">
             <div class="ele a"><img src="img/001.png"></div>
             <div class="ele b"><img src="img/002.png"><span class="light"></span></div>
             <div class="ele line l1"></div>
@@ -30,29 +30,20 @@
             <div class="ele line l2"></div>
         </div>
     </div>
+    <audio id="m" autoplay="autoplay" loop="loop" src="bg3.mp3"></audio>
 
-
-    <audio id="m" preload="metadata" autoplay="autoplay" loop="loop" src="bg.mp3"></audio>
-    </body>
     <script src="libs/jquery-1.12.0.min.js"></script>
     <script>
         $(function () {
             var star = $('<div class="star"></div>');
-            for (var i=0; i<120; i++) {
-                var _s = star.clone();
-                var _size = Math.round(Math.random()*30)+10;
-                _s.css({
-                    top: Math.round(Math.random()*($(window).height()-100))+50,
-                    left: Math.round(Math.random()*($(window).width()-60))+30,
-                    animationDelay: Math.round(Math.random()*2000)+"ms"
-                }).width(_size).height(_size);
-                $("body").append(_s);
+            for (var i=0; i<80; i++) {
+                setTimeout(createStar, Math.round(Math.random()*2000));
             }
             $(".light").each(function (i) {
                 var _this = this;
                 setTimeout(function () {
                     $(_this).show().addClass("light-motion");
-                }, i*600+20000)
+                }, i*200+10000)
             });
             //
             var media = document.getElementById("m");
@@ -63,5 +54,17 @@
                 else media.pause();
             });
         });
+        function createStar() {
+            var star = $('<div class="star star-motion"></div>');
+            var size = Math.round(Math.random()*50)+20;
+            var x = Math.round(Math.random()*($(window).width()-100))+50;
+            var y = Math.round(Math.random()*($(window).height()-100))+50;
+            star.width(size).height(size).css({left: x, top: y}).appendTo("body");
+            setTimeout(function () {
+                star.remove();
+                createStar();
+            }, 2000);
+        }
     </script>
+    </body>
 </html>
